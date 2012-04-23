@@ -1,0 +1,20 @@
+<h1>Listing intervals</h1>
+<% if !@interval.nil? %>
+<table>
+  <tr>
+    <th>Start</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tr>
+    <td><%= @interval.start %></td>
+    <td><%= link_to 'Close', edit_interval_path(@interval) %></td>
+    <td><%= link_to 'Destroy', @interval, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+
+</table>
+<% else %>
+<%= link_to 'New Interval', new_interval_path %>
+<% end %>
+

@@ -1,0 +1,23 @@
+<h1>Listing @basics</h1>
+
+<table>
+  <tr>
+    <th>Daily hours</th>
+    <th>Time bank</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <tr>
+    <td><%= to_hours(@basic.daily_hours) %></td>
+    <td><%= to_hours(@basic.time_bank) %></td>
+    <td><%= link_to 'Show', @basic %></td>
+    <td><%= link_to 'Edit', edit_basic_path(@basic) %></td>
+    <td><%= link_to 'Destroy', @basic, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+
+</table>
+
+<br />
+

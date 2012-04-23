@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parsoca</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    controller.controller_name, :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= link_to('Parsoca', root_path, :class => "brand") %> 
+
+      <div class="nav-collapse">
+        <ul class="nav">
+          <%= render 'shared/navigation' %>
+        </ul>
+        <p class="navbar-text pull-right">
+	        <% if user_signed_in? %>
+			    <%= link_to current_user.email, edit_user_registration_path %> &#124; 
+			    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+	        <% else %>
+			    <%= link_to "Sign Up", new_user_registration_path %> or
+			    <%= link_to "Sign In", new_user_session_path %>
+	        <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= render 'shared/flash_messages' %>
+
+  <%= yield %>
+
+  <hr>
+  <%= render 'shared/footer' %>
+  <%= debug(params) if Rails.env.development? %>
+</div> <!-- /container -->
+</body>
+</html>

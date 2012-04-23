@@ -1,0 +1,9 @@
+rails generate scaffold User \
+email:string \
+password:string 
+
+rails generate scaffold Interval \
+user_id:
+start:datetime \
+end:datetime \
+

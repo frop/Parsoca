@@ -1,0 +1,8 @@
+class Report < ActiveModel::Base
+  belongs_to :user
+  
+  # Exclude password info from json output.
+  def self.daily
+    self.interval.group("strftime('%m-%d-%Y', start)").sum("amount")
+  end
+end

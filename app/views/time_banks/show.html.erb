@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Base:</b>
+  <%= to_hours(@time_bank.base) %>
+</p>
+
+
+<%= link_to 'Edit', edit_time_bank_path(@time_bank) %> |
+<%= link_to 'Back', time_banks_path %>

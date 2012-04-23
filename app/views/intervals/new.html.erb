@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="span12"><h1>Marcar hora de entrada <%= @interval_index %></h1></div>
+</div>
+
+<div class="row">
+	<div class="offset2 span8">
+	<%= render :partial => "date", :locals => { :date => @date} if @retroactive.nil? %>
+	<%= render 'form' %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="offset2 span8">
+		<%= link_to 'Retroactive', retroactive_intervals_path if @retroactive.nil? %>
+	</div>
+</div>

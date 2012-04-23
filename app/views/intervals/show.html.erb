@@ -1,0 +1,13 @@
+<p>
+  <b>Start:</b>
+  <%= @interval.start %>
+</p>
+<% if !@interval.end.nil? %>
+<p>
+  <b>End:</b>
+  <%= @interval.end %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_interval_path(@interval) %> |
+<%= link_to 'Back', intervals_path %>

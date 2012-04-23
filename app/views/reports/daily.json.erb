@@ -1,0 +1,1 @@
+[<% @days.each_with_index do |day, index| %>[<%= day[0].to_time.to_i %>000, "<%= day[1] %>"]<%= ',' unless index == @days.count - 1 %><% end %>]

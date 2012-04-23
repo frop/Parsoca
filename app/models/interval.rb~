@@ -1,0 +1,16 @@
+class Interval < ActiveRecord::Base
+  belongs_to :user
+  
+  # Exclude password info from json output.
+  def to_json(options={})
+    options[:except] ||= [:created_at, :updated_at]
+    super(options)
+  end
+  
+  def end=(time)
+	  amount_will_change!
+	  self.amount = (time - self.start)/60 unless time.nil?
+	  super(time)
+  end
+
+end

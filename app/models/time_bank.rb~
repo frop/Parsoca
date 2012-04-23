@@ -1,0 +1,25 @@
+class TimeBank < ActiveRecord::Base
+  belongs_to :user
+  
+  def self.from_hours(hours)
+    h,m = hours.split(":")
+    if h.to_i > 0
+      h.to_i * 60 + m.to_i
+    else
+      h.to_i * 60 - m.to_i
+    end
+  end
+  
+  def calculate
+#     t=0
+#     self.user.intervals.group("strftime('%m-%d-%Y', start)").sum("amount").each { |i|
+#       t += i[1] - self.daily_hours*60
+#     }
+#     self.base += t
+
+    last = self.user.intervals.last
+    amount = last.amount - self.daily_hours*60
+    self.base += amount
+    self.save
+  end
+end

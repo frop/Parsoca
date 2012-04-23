@@ -1,0 +1,54 @@
+// Place all the styles related to the Intervals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.date{
+	float: left;
+	width: 160px;
+	padding-top: 0px;
+	line-height: normal;
+	text-align: center;
+	margin-right: 30px;
+}
+
+.date .year{
+	display: block;
+	text-align: center;
+	font-size: 36px;
+}
+
+.date .month{
+	float: left;
+	display: block;
+	font-size: 35px;
+	text-transform: uppercase;
+	font-weight: bold;
+	width: 80px;
+}
+
+.date .day{
+	display: block;
+	text-align: center;
+	font-size: 145px;
+	height: 160px;
+}
+
+.interval {
+	line-height: normal;
+	font-size: 50px;
+	display: block;
+}
+
+.start-label{
+	line-height: normal;
+	font-size: 15px;
+	margin-top: 30px;
+	display: block;
+}
+
+.end-label{
+	line-height: normal;
+	font-size: 15px;
+	display: block;
+}
+

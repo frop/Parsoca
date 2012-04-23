@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Daily hours:</b>
+  <%= @basic.daily_hours %>
+</p>
+
+<p>
+  <b>Time bank:</b>
+  <%= @basic.time_bank %>
+</p>
+
+
+<%= link_to 'Edit', edit_basic_path(@basic) %> |
+<%= link_to 'Back', basics_path %>

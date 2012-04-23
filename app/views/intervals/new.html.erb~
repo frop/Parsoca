@@ -1,0 +1,6 @@
+<h1>Marcar hora de entrada <%= @interval_index %></h1>
+<h2><%= Date.today%></h2>
+
+<%= render 'form' %>
+
+<%= link_to 'Retroactive', retroactive_intervals_path if @retroactive.nil? %>

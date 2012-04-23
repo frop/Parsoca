@@ -1,0 +1,26 @@
+<h1>Listing time_banks</h1>
+Base: <span class="label label-<%= hours_span_class(@base_time_bank)%>"><%= to_hours(@base_time_bank) %></span>
+<table>
+  <tr>
+    <th>Day</th>
+    <th></th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @time_banks.each do |time_bank| %>
+  <tr>
+    <td><%= time_bank.date %></td>
+    <td></td>
+    <td><span class="label label-<%= hours_span_class(time_bank.value)%>"><%= to_hours(time_bank.value) %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<br />
+
+<div id='graph_placeholder' style="padding: 0px; position: relative; height: 300px;"></div>
+

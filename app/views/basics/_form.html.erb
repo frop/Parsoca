@@ -1,0 +1,25 @@
+<%= form_for(@basic) do |f| %>
+  <% if @basic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@basic.errors.count, "error") %> prohibited this basic from being saved:</h2>
+
+      <ul>
+      <% @basic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :daily_hours %><br />
+    <%= f.number_field :daily_hours %>
+  </div>
+  <div class="field">
+    <%= f.label :time_bank %><br />
+    <%= f.number_field :time_bank %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

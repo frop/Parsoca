@@ -1,0 +1,36 @@
+<h1>Daily</h1>
+Daily hours: <%= to_hours(@daily_hours) %>
+<table>
+  <tr>
+    <th>Day</th>
+    <th></th>
+    <th>Amount</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @days.each do |day| %>
+  <tr>
+    <td><%= day[0] %></td>
+    <td></td>
+    <td><%= to_hours(day[1]) %></td>
+    <td><span class="label label-<%= hours_span_class(day[1] - @daily_hours)%>"><%= to_hours(day[1] - @daily_hours) %></td>
+  </tr>
+<% end %>
+<tr>
+    <td>Current Time Bank</td>
+    <td><%= to_hours(@current_time_bank) %></td>
+</tr>
+</table>
+
+<br />
+
+<div id='placeholder' style="padding: 0px; position: relative; height: 300px;"></div>
+<div id="overview" style="margin-left: 50px; margin-top: 20px; width: 400px; height: 50px; padding: 0px; position: relative;"></div>
+
+<%= javascript_include_tag "reports" %>
+<%= javascript_include_tag "jquery.flot" %>
+<%= javascript_include_tag "jquery.flot.threshold" %>
+<%= javascript_include_tag "jquery.flot.selection" %>
+

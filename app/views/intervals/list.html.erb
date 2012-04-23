@@ -1,0 +1,27 @@
+<h1>Listing intervals</h1>
+
+<table>
+  <tr>
+    <th>Start</th>
+    <th>End</th>
+    <th>Amount</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @intervals.each_with_index do |interval, index| %>
+  <tr>
+    <td><%= interval.start %></td>
+    <td><%= interval.end %></td>
+    <td><%= to_hours(interval.amount) unless interval.amount.nil? %></td>
+    <td><%= link_to 'Show', interval %></td>
+    <td><%= link_to 'Edit', edit_interval_path(interval) unless index > 0 %></td>
+    <td><%= link_to 'Destroy', interval, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Interval', new_interval_path %>
