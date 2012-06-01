@@ -1,5 +1,0 @@
-<h2>Crie sua conta!</h2>
-
-<%= render "sign_up_form" %>
-
-<%= render "links" %>
